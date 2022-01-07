@@ -1,0 +1,107 @@
+[
+    {
+        "tittle": "Cadastrar nivel de acesso",
+        "description": "Cadastrar e definir niveis de acesso para sistemas (ex: admin, user, editor)",
+        "given": "Preciso ter niveis para tipos de acessos diferentes, preciso cadastrar os niveis",
+        "when": "Ao ter necessidade de tipos de niveis com mais ou menos acessos",
+        "then": "Sempre deve haver um nivel existente pelo menos"
+    },
+    {
+        "tittle": "Cadastrar sistema, modulo ou plugin",
+        "description": "Devo cadastrar sistemas, modulos ou plugins que terão a permissão de acesso do nivel especifico",
+        "given": "Preciso ter acesso a um ou mais sistemas, modulos ou plugins para tipos de permissoes, necessario o cadastro",
+        "when": "Ao criar um nivel de acesso, preciso especificar quais sistemas esse nivel pode acessar e quais permissões esse nivel tera em cada sistema",
+        "then": "Cada sistema deve ter ao menos um tipo de permissão"
+    },
+    {
+        "tittle": "Cadastrar Permissão de acesso",
+        "description": "Devo cadastrar tipos de permissões de acessos para o sistema (ex: escrita, leitura, edicao)",
+        "given": "Preciso ter permissões especificas para cada nivel de acesso, preciso cadastrar essas permissoes",
+        "when": "Ao ter necessidade de novos tipos de permissões",
+        "then": "Cada sistema deve ter ao menos um tipo de permissão"
+    },
+    {
+        "tittle": "Cadastrar nivel de permissão de acesso",
+        "description": "Devo dar a cada permissão de acesso um nivel de acesso sendo 0 nivel full e crescente reduzindo permissão",
+        "given": "Preciso limitar os acessos alem do tipo de permissão, especificar o nivel desse tipo de permissão",
+        "when": "Quando criar um tipo de permissão esse tipo deve ter niveis diferentes numericos e crescente de acesso",
+        "then": "Todo tipo de permissão deve ter uma escala de permissão de acesso"
+    },
+    {
+        "tittle": "Consultar niveis de acesso",
+        "description": "",
+        "given": "",
+        "when": "",
+        "then": ""
+    },
+    {
+        "tittle": "Consultar nivel de acesso",
+        "description": "",
+        "given": "",
+        "when": "",
+        "then": ""
+    },
+    {
+        "tittle": "Consultar sistemas, modulos ou plugins",
+        "description": "",
+        "given": "",
+        "when": "",
+        "then": ""
+    },
+    {
+        "tittle": "Consultar sistema, modulo ou plugin",
+        "description": "",
+        "given": "",
+        "when": "",
+        "then": ""
+    },
+    {
+        "tittle": "Consultar Permissões de acesso",
+        "description": "",
+        "given": "",
+        "when": "",
+        "then": ""
+    },
+    {
+        "tittle": "Consultar Permissão de acesso",
+        "description": "",
+        "given": "",
+        "when": "",
+        "then": ""
+    },
+    {
+        "tittle": "Alterar nivel de acesso",
+        "description": "",
+        "given": "",
+        "when": "",
+        "then": ""
+    },
+    {
+        "tittle": "Alterar sistema, modulo ou plugin",
+        "description": "",
+        "given": "",
+        "when": "",
+        "then": ""
+    },
+    {
+        "tittle": "Alterar Permissão de acesso",
+        "description": "",
+        "given": "",
+        "when": "",
+        "then": ""
+    },
+    {
+        "tittle": "Desativar/Ativar nivel de acesso",
+        "description": "",
+        "given": "",
+        "when": "",
+        "then": ""
+    },
+    {
+        "tittle": "Desativar/Ativar sistema, modulo ou plugin",
+        "description": "",
+        "given": "",
+        "when": "",
+        "then": ""
+    }
+]

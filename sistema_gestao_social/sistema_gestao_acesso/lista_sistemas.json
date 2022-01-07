@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "sigla": "sga",
+        "tipo": "sistema",
+        "permissoes": [
+            {
+                "tipo": "read",
+                "tipo_nivel": 1
+            },
+            {
+                "tipo": "whiter",
+                "tipo_nivel": 1
+            },
+            {
+                "tipo": "editor",
+                "tipo_nivel": 1
+            }
+        ],
+        "criando_em":"2022-01-06T21:30:00",
+        "atualizado_em": "2022-01-06T21:30:00",
+        "criado_por": "root",
+        "atualizado_por": "root",
+        "ativo": true
+    }
+]
