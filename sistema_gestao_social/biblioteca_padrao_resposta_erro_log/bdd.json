@@ -1,0 +1,16 @@
+[
+    {
+        "tittle": "Padrão de retorno de erro para exceções",
+        "description": "Em um unico lugar será definido handler de retorno de erros retornando o padrão definido e unico",
+        "given": "",
+        "when": "",
+        "then": ""
+    },
+    {
+        "tittle": "Padrão de log com padrão de correlação de requisição em cabeçalho",
+        "description": "O log será gerado em um unico lugar mantendo correlação entre requisições",
+        "given": "",
+        "when": "",
+        "then": ""
+    }
+]

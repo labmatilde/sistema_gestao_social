@@ -1,0 +1,100 @@
+[
+    {
+        "tittle": "Cadastrar Situações Possiveis",
+        "description": "Devo cadastrar qualquer situação possivel no sistema (Assinado, recusado, ativo)",
+        "given": "Preciso ter situações para definir possiveis status para qualquer area do sistema",
+        "when": "Ao ter necessidade de difinir um estado atual para qualquer coisa",
+        "then": "Deve sempre haver um estado para qualquer coisa"
+    },
+    {
+        "tittle": "Cadastrar erros do sistema",
+        "description": "Todo erro mapeado deve ser cadastrado e mapeado no sistema para uma resposta ativa ao cliente",
+        "given": "O cliente precisa de uma resposta concreta do que aconteceu ou esta acontecendo com sua solicitação",
+        "when": "Na identificação de um erro onde podemos tratar e retornar uma mensagem de resposta",
+        "then": "Todo erro deve possuir um codigo e uma mensagem ao menos"
+    },
+    {
+        "tittle": "Consultar Situação por nome ou id",
+        "description": "",
+        "given": "",
+        "when": "",
+        "then": ""
+    },
+    {
+        "tittle": "Consultar Situações",
+        "description": "",
+        "given": "",
+        "when": "",
+        "then": ""
+    },
+    {
+        "tittle": "Consultar erro",
+        "description": "",
+        "given": "",
+        "when": "",
+        "then": ""
+    },
+    {
+        "tittle": "Consultar erros",
+        "description": "",
+        "given": "",
+        "when": "",
+        "then": ""
+    },
+    {
+        "tittle": "Alterar mensagem do erro",
+        "description": "",
+        "given": "",
+        "when": "",
+        "then": ""
+    },
+    {
+        "tittle": "Cadastrar sistema, modulo ou plugin",
+        "description": "Devo cadastrar sistemas, modulos ou plugins que terão a permissão de acesso do nivel especifico",
+        "given": "Preciso ter acesso a um ou mais sistemas, modulos ou plugins para tipos de permissoes, necessario o cadastro",
+        "when": "Ao criar um nivel de acesso, preciso especificar quais sistemas esse nivel pode acessar e quais permissões esse nivel tera em cada sistema",
+        "then": "Cada sistema deve ter ao menos um tipo de permissão"
+    },
+    {
+        "tittle": "Alterar sistema, modulo ou plugin",
+        "description": "",
+        "given": "",
+        "when": "",
+        "then": ""
+    },
+    {
+        "tittle": "Desativar/Ativar sistema, modulo ou plugin",
+        "description": "",
+        "given": "",
+        "when": "",
+        "then": ""
+    },
+    {
+        "tittle": "Consultar sistemas, modulos ou plugins",
+        "description": "",
+        "given": "",
+        "when": "",
+        "then": ""
+    },
+    {
+        "tittle": "Cadastrar Permissão de acesso",
+        "description": "Devo cadastrar tipos de permissões de acessos para o sistema (escrita, leitura e execução)",
+        "given": "Preciso ter permissões especificas para cada nivel de acesso, preciso cadastrar essas permissoes",
+        "when": "Ao ter necessidade de novos tipos de permissões",
+        "then": "Cada sistema deve ter ao menos um tipo de permissão"
+    },
+    {
+        "tittle": "Consultar Permissões de acesso",
+        "description": "Devo poder consultar as permissões de",
+        "given": "",
+        "when": "",
+        "then": ""
+    },
+    {
+        "tittle": "Consultar Permissão de acesso",
+        "description": "",
+        "given": "",
+        "when": "",
+        "then": ""
+    }
+]

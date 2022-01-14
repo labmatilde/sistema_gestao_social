@@ -7,20 +7,6 @@
         "then": "Sempre deve haver um nivel existente pelo menos"
     },
     {
-        "tittle": "Cadastrar sistema, modulo ou plugin",
-        "description": "Devo cadastrar sistemas, modulos ou plugins que terão a permissão de acesso do nivel especifico",
-        "given": "Preciso ter acesso a um ou mais sistemas, modulos ou plugins para tipos de permissoes, necessario o cadastro",
-        "when": "Ao criar um nivel de acesso, preciso especificar quais sistemas esse nivel pode acessar e quais permissões esse nivel tera em cada sistema",
-        "then": "Cada sistema deve ter ao menos um tipo de permissão"
-    },
-    {
-        "tittle": "Cadastrar Permissão de acesso",
-        "description": "Devo cadastrar tipos de permissões de acessos para o sistema (ex: escrita, leitura, edicao)",
-        "given": "Preciso ter permissões especificas para cada nivel de acesso, preciso cadastrar essas permissoes",
-        "when": "Ao ter necessidade de novos tipos de permissões",
-        "then": "Cada sistema deve ter ao menos um tipo de permissão"
-    },
-    {
         "tittle": "Cadastrar nivel de permissão de acesso",
         "description": "Devo dar a cada permissão de acesso um nivel de acesso sendo 0 nivel full e crescente reduzindo permissão",
         "given": "Preciso limitar os acessos alem do tipo de permissão, especificar o nivel desse tipo de permissão",
@@ -29,77 +15,28 @@
     },
     {
         "tittle": "Consultar niveis de acesso",
-        "description": "",
-        "given": "",
-        "when": "",
-        "then": ""
+        "description": "Necessário a consulta de todos os níveis de acessos presentes no banco de dados com / sem paginacao",
+        "given": "Preciso consultar niveis de acesso para apresentar ao cliente as opções",
+        "when": "Preciso cadastrar um novo usuario e preciso incluir ele ao um nível ja existente",
+        "then": "Essa consulta nunca deve vir vazia ao menos um nível deve sempre existir"
     },
     {
         "tittle": "Consultar nivel de acesso",
-        "description": "",
-        "given": "",
-        "when": "",
-        "then": ""
-    },
-    {
-        "tittle": "Consultar sistemas, modulos ou plugins",
-        "description": "",
-        "given": "",
-        "when": "",
-        "then": ""
-    },
-    {
-        "tittle": "Consultar sistema, modulo ou plugin",
-        "description": "",
-        "given": "",
-        "when": "",
-        "then": ""
-    },
-    {
-        "tittle": "Consultar Permissões de acesso",
-        "description": "",
-        "given": "",
-        "when": "",
-        "then": ""
-    },
-    {
-        "tittle": "Consultar Permissão de acesso",
-        "description": "",
-        "given": "",
-        "when": "",
-        "then": ""
+        "description": "Consultar apenas um nivel de acesso pelo nome ou por chave",
+        "given": "Preciso inserir o respectivel nivel ao novo usuario ou alterar o nivel do usuario existente",
+        "when": "ao cadastrar novo usuario ou alterar permissoes de um usuario ja existente",
+        "then": "devo buscar nivel por nome ou chave caso nao encontrar devo retornar um erro"
     },
     {
         "tittle": "Alterar nivel de acesso",
-        "description": "",
-        "given": "",
-        "when": "",
-        "then": ""
-    },
-    {
-        "tittle": "Alterar sistema, modulo ou plugin",
-        "description": "",
-        "given": "",
-        "when": "",
-        "then": ""
-    },
-    {
-        "tittle": "Alterar Permissão de acesso",
-        "description": "",
+        "description": "Usuario deve ter a disponibilidade de alterar um nivel de acesso",
         "given": "",
         "when": "",
         "then": ""
     },
     {
         "tittle": "Desativar/Ativar nivel de acesso",
-        "description": "",
-        "given": "",
-        "when": "",
-        "then": ""
-    },
-    {
-        "tittle": "Desativar/Ativar sistema, modulo ou plugin",
-        "description": "",
+        "description": "Nível de acesso não deve ser excluido devido seus relacionamentos, pode ser desativado caso necessário",
         "given": "",
         "when": "",
         "then": ""
