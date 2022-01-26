@@ -1,0 +1,30 @@
+[
+    {
+        "tittle": "Cadastrar erros do sistema",
+        "description": "Todo erro mapeado deve ser cadastrado e mapeado no sistema para uma resposta ativa ao cliente",
+        "given": "O cliente precisa de uma resposta concreta do que aconteceu ou esta acontecendo com sua solicitação",
+        "when": "Na identificação de um erro onde podemos tratar e retornar uma mensagem de resposta",
+        "then": "Todo erro deve possuir um codigo e uma mensagem ao menos"
+    },
+    {
+        "tittle": "Consultar erro",
+        "description": "",
+        "given": "",
+        "when": "",
+        "then": ""
+    },
+    {
+        "tittle": "Consultar erros",
+        "description": "",
+        "given": "",
+        "when": "",
+        "then": ""
+    },
+    {
+        "tittle": "Alterar mensagem do erro",
+        "description": "",
+        "given": "",
+        "when": "",
+        "then": ""
+    }
+]

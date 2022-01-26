@@ -1,0 +1,270 @@
+openapi: 3.0.1
+info:
+  title: Sistema de Gestão de Sistemas
+  version: 1.0.0
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+- url: https://localhost:8080/v1/api
+tags:
+- name: modulos
+  description: Acesso aos modulos do sistema de gestao social
+- name: situacoes
+  description: Acesso as situações possiveis do sistema de gestao social
+paths:
+  /module:
+    get:
+      tags:
+      - modulos
+      summary: Finds Pets by status
+      description: Multiple status values can be provided with comma separated strings
+      operationId: findAllModules
+      parameters:
+      - name: status
+        in: query
+        description: Status values that need to be considered for filter
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            default: available
+            enum:
+            - available
+            - pending
+            - sold
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataResponseAll'
+        400:
+          description: Invalid status value
+          content: {}
+      security:
+      - petstore_auth:
+        - write:pets
+        - read:pets
+    post:
+      tags:
+      - modulos
+      summary: Add novos modulos ao sistema de gestao social
+      operationId: createModule
+      requestBody:
+        description: Inserir novos modulos na base de dados do sistema
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModuleParameter'
+        required: true
+      responses:
+        405:
+          description: Invalid input
+          content: {}
+      security:
+      - petstore_auth:
+        - write:pets
+        - read:pets
+      x-codegen-request-body-name: body
+  /module/{moduleId}:
+    put:
+      tags:
+      - modulos
+      summary: Update an existing pet
+      operationId: updateModule
+      parameters:
+      - name: moduleId
+        in: path
+        description: retorna modulo por id
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        description: Pet object that needs to be added to the store
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModuleParameter'
+        required: true
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Pet not found
+          content: {}
+        405:
+          description: Validation exception
+          content: {}
+      security:
+      - petstore_auth:
+        - write:pets
+        - read:pets
+      x-codegen-request-body-name: body
+    get:
+      tags:
+      - modulos
+      summary: Buscar um modulo por chave na base
+      description: Retorna um unico modulo
+      operationId: getModuleById
+      parameters:
+      - name: moduleId
+        in: path
+        description: retorna modulo por id
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataResponse'
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Pet not found
+          content: {}
+      security:
+      - api_key: []
+    delete:
+      tags:
+      - modulos
+      summary: Deletes a pet
+      operationId: deletePet
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: moduleId
+        in: path
+        description: Pet id to delete
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        400:
+          description: Invalid ID supplied
+          content: {}
+        404:
+          description: Pet not found
+          content: {}
+      security:
+      - petstore_auth:
+        - write:pets
+        - read:pets
+
+components:
+  schemas:
+    ModuleParameter:
+      required:
+        - initials
+        - module_type
+        - permissions
+      type: object
+      properties:
+        initials:
+          type: string
+          example: 'SGA'
+        module_type:
+          type: string
+          enum: 
+            - system
+            - module
+            - plug-in
+        permissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Permissions'
+          
+    Permissions:
+      type: object
+      properties:
+        type_permission:
+          type: string
+          enum:
+            - read
+            - whiter
+            - editor
+        type_level:
+          type: number
+          example: 1
+        
+
+    DataResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/ModuleResponse'
+    
+    DataResponseAll:
+      type: object
+      properties:
+        data:
+          type: array 
+          items:
+            $ref: '#/components/schemas/ModuleResponse'
+  
+    ModuleResponse:
+      type: object
+      required:
+        - initials
+        - module_type
+        - permissions
+      properties:
+        id: 
+          type: number
+          example: 123
+        initials:
+          type: string
+          example: 'SGA'
+        module_type:
+          type: string
+          enum: 
+            - system
+            - module
+            - plug-in
+        permissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Permissions'
+          minItems: 1
+        created_at:
+          type: string
+          format: date
+          example: '2022-01-06T21:30:00'
+        updated_at:
+          type: string
+          format: date
+          example: '2022-01-06T21:30:00'
+        created_by:
+          type: string
+          example: 'root'
+        updated_by:
+          type: string
+          example: 'root'
+          
+  securitySchemes:
+    petstore_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: http://petstore.swagger.io/oauth/dialog
+          scopes:
+            write:pets: modify pets in your account
+            read:pets: read your pets
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header
