@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: Sistema de Gestão de Sistemas
+  title: Sistema de Gestão de Acessos
   version: 1.0.0
 externalDocs:
   description: Find out more about Swagger
@@ -8,17 +8,17 @@ externalDocs:
 servers:
 - url: https://localhost:8080/v1/api
 tags:
-- name: modulos
+- name: acessos
   description: Acesso aos modulos do sistema de gestao social
 - name: situacoes
-  description: Acesso as situações possiveis do sistema de gestao social
+  description: Cria edita e consulta acessos dos usuarios
 paths:
-  /module:
+  /access:
     get:
       tags:
-      - modulos
-      summary: Buscar por todos modulos
-      operationId: findAllModules
+      - acessos
+      summary: Buscar por todos acessos
+      operationId: findAllAccess
       responses:
         200:
           description: successful operation
@@ -32,9 +32,9 @@ paths:
         
     post:
       tags:
-      - modulos
-      summary: Add novos modulos ao sistema de gestao social
-      operationId: createModule
+      - acessos
+      summary: Add novos acessos ao sistema de gestao social
+      operationId: createAccess
       requestBody:
         description: Inserir novos modulos na base de dados do sistema
         content:
@@ -50,22 +50,21 @@ paths:
         - write:data
         - read:data
         
-  /module/{moduleId}:
+  /acccess/{accessId}:
     put:
       tags:
-      - modulos
-      summary: Atualiza os modulos
-      operationId: updateModule
+      - acessos
+      summary: Atualiza os acessos
+      operationId: updateAccess
       parameters:
-      - name: moduleId
+      - name: accessId
         in: path
-        description: retorna modulo por id
+        description: retorna acesso por id
         required: true
         schema:
           type: integer
           format: int64
       requestBody:
-        description: Pet object that needs to be added to the store
         content:
           application/json:
             schema:
@@ -81,12 +80,12 @@ paths:
         
     get:
       tags:
-      - modulos
-      summary: Buscar um modulo por chave na base
-      description: Retorna um unico modulo
-      operationId: getModuleById
+      - acessos
+      summary: Buscar um acesso por chave na base
+      description: Retorna um unico acesso
+      operationId: getAccessById
       parameters:
-      - name: moduleId
+      - name: accessId
         in: path
         description: retorna modulo por id
         required: true
@@ -95,7 +94,7 @@ paths:
           format: int64
       responses:
         200:
-          description: successful operation
+          description: ok
           content:
             application/json:
               schema:
@@ -106,15 +105,15 @@ paths:
         
     delete:
       tags:
-      - modulos
+      - acessos
       summary: Deletes a pet
-      operationId: deletePet
+      operationId: deleteAccess
       parameters:
       - name: api_key
         in: header
         schema:
           type: string
-      - name: moduleId
+      - name: accessId
         in: path
         description: Pet id to delete
         required: true
@@ -223,7 +222,7 @@ components:
       type: oauth2
       flows:
         implicit:
-          authorizationUrl: http://petstore.swagger.io/oauth/dialog
+          authorizationUrl: http://localhost
           scopes:
             write:data: modify data in your account
             read:data: read your data
