@@ -1,0 +1,232 @@
+openapi: 3.0.1
+info:
+  title: Sistema de Gestão de Acessos
+  version: 1.0.0
+externalDocs:
+  description: Find out more about Swagger
+  url: http://swagger.io
+servers:
+- url: https://localhost:8080/v1/api
+tags:
+- name: acessos
+  description: Acesso aos modulos do sistema de gestao social
+- name: situacoes
+  description: Cria edita e consulta acessos dos usuarios
+paths:
+  /access:
+    get:
+      tags:
+      - acessos
+      summary: Buscar por todos acessos
+      operationId: findAllAccess
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataResponseAll'
+      security:
+      - request_auth:
+        - read:data
+        
+    post:
+      tags:
+      - acessos
+      summary: Add novos acessos ao sistema de gestao social
+      operationId: createAccess
+      requestBody:
+        description: Inserir novos modulos na base de dados do sistema
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModuleParameter'
+        required: true
+      responses:
+        201:
+          description: Create
+      security:
+      - request_auth:
+        - write:data
+        - read:data
+        
+  /acccess/{accessId}:
+    put:
+      tags:
+      - acessos
+      summary: Atualiza os acessos
+      operationId: updateAccess
+      parameters:
+      - name: accessId
+        in: path
+        description: retorna acesso por id
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModuleParameter'
+        required: true
+      responses:
+        204:
+          description: No Content
+      security:
+      - request_auth:
+        - write:data
+        - read:data
+        
+    get:
+      tags:
+      - acessos
+      summary: Buscar um acesso por chave na base
+      description: Retorna um unico acesso
+      operationId: getAccessById
+      parameters:
+      - name: accessId
+        in: path
+        description: retorna modulo por id
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        200:
+          description: ok
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataResponse'
+      security:
+      - request_auth:
+        - read:data
+        
+    delete:
+      tags:
+      - acessos
+      summary: Deletes a pet
+      operationId: deleteAccess
+      parameters:
+      - name: api_key
+        in: header
+        schema:
+          type: string
+      - name: accessId
+        in: path
+        description: Pet id to delete
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        204:
+          description: No Content
+      security:
+      - request_auth:
+        - write:data
+
+components:
+  schemas:
+    ModuleParameter:
+      required:
+        - initials
+        - module_type
+        - permissions
+      type: object
+      properties:
+        initials:
+          type: string
+          example: 'SGA'
+        module_type:
+          type: string
+          enum: 
+            - system
+            - module
+            - plug-in
+        permissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Permissions'
+          
+    Permissions:
+      type: object
+      properties:
+        type_permission:
+          type: string
+          enum:
+            - read
+            - whiter
+            - editor
+        type_level:
+          type: number
+          example: 1
+        
+
+    DataResponse:
+      type: object
+      properties:
+        data:
+          $ref: '#/components/schemas/ModuleResponse'
+    
+    DataResponseAll:
+      type: object
+      properties:
+        data:
+          type: array 
+          items:
+            $ref: '#/components/schemas/ModuleResponse'
+  
+    ModuleResponse:
+      type: object
+      required:
+        - initials
+        - module_type
+        - permissions
+      properties:
+        id: 
+          type: number
+          example: 123
+        initials:
+          type: string
+          example: 'SGA'
+        module_type:
+          type: string
+          enum: 
+            - system
+            - module
+            - plug-in
+        permissions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Permissions'
+          minItems: 1
+        created_at:
+          type: string
+          format: date
+          example: '2022-01-06T21:30:00'
+        updated_at:
+          type: string
+          format: date
+          example: '2022-01-06T21:30:00'
+        created_by:
+          type: string
+          example: 'root'
+        updated_by:
+          type: string
+          example: 'root'
+          
+  securitySchemes:
+    request_auth:
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: http://localhost
+          scopes:
+            write:data: modify data in your account
+            read:data: read your data
+    api_key:
+      type: apiKey
+      name: api_key
+      in: header

@@ -1,0 +1,23 @@
+[
+    {
+        "tittle": "Cadastrar tipo do produto",
+        "description": "(alimento, roupa, mobilia)",
+        "given": "",
+        "when": "",
+        "then": ""
+    },
+    {
+        "tittle": "Cadastrar categoria do produto",
+        "description": "()",
+        "given": "",
+        "when": "",
+        "then": ""
+    },
+    {
+        "tittle": "Cadastrar o produto",
+        "description": "",
+        "given": "",
+        "when": "",
+        "then": ""
+    }
+]

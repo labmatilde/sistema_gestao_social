@@ -1,0 +1,41 @@
+[
+    {
+        "id":1,
+        "criando_em":"2022-01-06T21:30:00",
+        "atualizado_em": "2022-01-06T21:30:00",
+        "criado_por": "root",
+        "atualizado_por": "root",
+        "nome": "Leite Longa vida",
+        "tipo": "Alimento",
+        "perecivel": true,
+        "categorias": [
+            {
+                "nome": "Leite"
+            },
+            {
+                "nome": "Mercearia Liquida"
+            }
+        ],
+        "data_validade": "13/05/2022",
+        "ean": "123654789",
+        "ncm": "12156",
+        "quantidade": 25,
+        "fornecedor": "Parmalat",
+        "modelo": "Longa vida",
+        "data_fabricacao": "13/01/2020",
+        "observacao": "Descrição para o produto",
+        "peso_liquido": "",
+        "peso_bruto": "",
+        "dimensao": {
+            "altura": "",
+            "comprimento": "",
+            "largura": ""
+        },
+        "unidade_medida": {
+            "tipo": "litro",
+            "medida": "1"
+        },
+        "condicao": "novo",
+        "imagem": "uri"
+    }
+]
