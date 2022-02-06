@@ -12,6 +12,14 @@ Para inicialiazar o banco de dados default com as configs iniciais usar o comand
 
 ```python manager.py migrate```
 
+
+Toda vez que realizar uma criação de um model ou alterar um model existente tem que executar o comando abaixo para realizar a atualizção/criação do mesmo
+
+```python manager.py makemigrations```
+
+depois de executar o makemigrations é só executar novamente o migrate para efetivar a atualizção/criação.
+
+
 Apos executar o comando de config default da base de dados podemos criar usuarios para logar na aplicacao/area de administracao django com o comando
 
 ```python manage.py createsuperuser```
