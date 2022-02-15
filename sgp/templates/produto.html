@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Produto</title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <table class="tg">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>data criacao</th>
+                <th>data atualizacao</th>
+                <th>criado por</th>
+                <th>quem atualizou</th>
+                <th>nome do produto</th>
+                <th>tipo</th>
+                <th>perecivel</th>
+                <th>categoria</th>
+                <th>data validade</th>
+                <th>ean</th>
+                <th>ncm</th>
+                <th>quantidade</th>
+                <th>fornecedor</th>
+                <th>modelo</th>
+                <th>data_fabricacao</th>
+                <th>observacao</th>
+                <th>peso_liquido</th>
+                <th>peso_bruto</th>
+                <th>unidade_medida</th>
+                <th>altura</th>
+                <th>comprimento</th>
+                <th>largura</th>
+                <th>condicao</th>
+                <th>imagem</th>
+            </tr>
+        </thead>
+        {% for produto in produtos %}
+        <tbody>
+            <tr>
+                <td>{{ produto.id }}</td>
+                <td>{{ produto.criando_em }}</td>
+                <td>{{ produto.atualizado_em }}</td>
+                <td>{{ produto.criado_por }}</td>
+                <td>{{ produto.atualizado_por }}</td>
+                <td>{{ produto.nome }}</td>
+                <td>{{ produto.tipo }}</td>
+                <td>{{ produto.perecivel }}</td>
+                <td>
+                    {{ produto.categorias.categoria }}
+                    {% for categoria in produto.categorias.id %}
+                        {{ categoria }}
+                    {% endfor %}
+                </td>
+                <td>{{ produto.data_validade }}</td>
+                <td>{{ produto.ean }}</td>
+                <td>{{ produto.ncm }}</td>
+                <td>{{ produto.quantidade }}</td>
+                <td>{{ produto.fornecedor }}</td>
+                <td>{{ produto.modelo }}</td>
+                <td>{{ produto.data_fabricacao }}</td>
+                <td>{{ produto.observacao }}</td>
+                <td>{{ produto.peso_liquido }}</td>
+                <td>{{ produto.peso_bruto }}</td>
+                <td>{{ produto.unidade_medida }}</td>
+                <td>{{ produto.altura }}</td>
+                <td>{{ produto.comprimento }}</td>
+                <td>{{ produto.largura }}</td>
+                <td>{{ produto.condicao }}</td>
+                <td>{{ produto.imagem }}</td>
+
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</body>
+</html>

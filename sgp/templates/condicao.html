@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Condicao</title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <table class="tg">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>condicao</th>
+            </tr>
+        </thead>
+        {% for condicao in condicoes %}
+        <tbody>
+            <tr>
+                <td>
+                    {{ condicao.id }}
+                </td>
+                <td>
+                    {{ condicao.condicao }}
+                </td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</body>
+</html>

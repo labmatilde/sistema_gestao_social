@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Unidade Media</title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <table class="tg">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>unidade medida</th>
+                <th>valor unidade</th>
+            </tr>
+        </thead>
+        {% for unidade_medida in unidade_medidas %}
+        <tbody>
+            <tr>
+                <td>
+                    {{ unidade_medida.id }}
+                </td>
+                <td>
+                    {{ unidade_medida.unidade_medida }}
+                </td>
+                <td>
+                    {{ unidade_medida.valor_unidade }}
+                </td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</body>
+</html>
