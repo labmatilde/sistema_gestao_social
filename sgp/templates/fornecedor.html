@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fornecedor</title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <table class="tg">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome do fornecedor</th>
+            </tr>
+        </thead>
+        {% for fornecedor in fornecedores %}
+        <tbody>
+            <tr>
+                <td>
+                    {{ fornecedor.id }}
+                </td>
+                <td>
+                    {{ fornecedor.nome }}
+                </td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</body>
+</html>

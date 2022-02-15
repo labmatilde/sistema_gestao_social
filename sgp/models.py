@@ -55,6 +55,6 @@ class Tipo(models.Model):
         return self.tipo
 
 class Condicao(models.Model):
-    codicao = models.CharField(max_length=100)
+    condicao = models.CharField(max_length=100)
     def __str__(self):
-        return self.codicao
+        return self.condicao

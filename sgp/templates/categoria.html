@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Categoria</title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <table class="tg">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome da categoria</th>
+            </tr>
+        </thead>
+        {% for categoria in categorias %}
+        <tbody>
+            <tr>
+                <td>
+                    {{ categoria.id }}
+                </td>
+                <td>
+                    {{ categoria.categoria }}
+                </td>
+            </tr>
+        </tbody>
+        {% endfor %}
+    </table>
+</body>
+</html>
