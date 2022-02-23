@@ -1,5 +1,6 @@
 # Por enquanto estou deixando o /migrations no .gitignore
 */migrations/*
+remover_sujeiras.sh
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
