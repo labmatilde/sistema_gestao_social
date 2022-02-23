@@ -15,10 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('sge/', include('sge.urls')),
-    path('sgf/', include('sgf.urls')),
-    path('sgp/', include('sgp.urls')),
-]
+    path('sge/', include('sgestoque.urls')),
+    path('sgf/', include('sgfinaceiro.urls')),
+    path('sgp/', include('sgproduto.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# TODO remover depois o debug tool bar
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+    path('__debug__/', include('debug_toolbar.urls')),
+    ] + urlpatterns

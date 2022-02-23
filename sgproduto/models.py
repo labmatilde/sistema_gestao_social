@@ -37,7 +37,10 @@ class Fornecedor(models.Model):
     nome = models.CharField(max_length=100)
     def __str__(self):
         return self.nome
-
+    class Meta:
+        verbose_name = 'Fornecedor'
+        verbose_name_plural = 'Fornecedores'
+        
 class Categoria(models.Model):
     categoria = models.CharField(max_length=100)
     def __str__(self):
@@ -58,3 +61,6 @@ class Condicao(models.Model):
     condicao = models.CharField(max_length=100)
     def __str__(self):
         return self.condicao
+    class Meta:
+        verbose_name = 'Condição'
+        verbose_name_plural = 'Condições'
