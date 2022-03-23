@@ -20,9 +20,14 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('sge/', include('sgestoque.urls')),
-    path('sgf/', include('sgfinaceiro.urls')),
-    path('sgp/', include('sgproduto.urls')),
+    path('sgfinaceiro/', include('sgfinaceiro.urls')),
+    path('sgproduto/', include('sgproduto.urls')),
+    path('sgprojeto/', include('sgprojeto.urls')),
+    path('sgfamilia/', include('sgfamilia.urls')),
+    path('sgdominios/', include('sgdominios.urls')),
+    path('sgarmazenagem/', include('sgarmazenagem.urls')),
+    path('sgkit/', include('sgkit.urls')),
+    path('sgpessoa/', include('sgpessoa.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # TODO remover depois o debug tool bar
