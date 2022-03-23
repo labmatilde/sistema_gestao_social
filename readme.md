@@ -10,12 +10,12 @@ Para iniciar/start da aplicação utilizar o comando dentro da pasta do projeto
 
 Para inicialiazar o banco de dados default com as configs iniciais usar o comando
 
-```python manager.py migrate```
+```python manage.py migrate```
 
 
 Toda vez que realizar uma criação de um model ou alterar um model existente tem que executar o comando abaixo para realizar a atualizção/criação do mesmo
 
-```python manager.py makemigrations```
+```python manage.py makemigrations```
 
 depois de executar o makemigrations é só executar novamente o migrate para efetivar a atualizção/criação.
 

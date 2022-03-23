@@ -39,10 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'sgestoque',
     'sgfinaceiro',
     'sgproduto',
-
+    'sgprojeto',
+    'sgfamilia',
+    'sgdominios',
+    'sgarmazenagem',
+    'sgkit',
+    'sgpessoa',
 
     # TODO remover depois o debug tool bar
     'debug_toolbar',

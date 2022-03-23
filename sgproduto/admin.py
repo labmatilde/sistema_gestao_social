@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Produto, Fornecedor, Categoria, UnidadeMedida, Tipo, Condicao
+from .models import Produto, Fornecedor, Categoria, UnidadeMedida, Tipo, Condicao, AtivoFixo
 
 # Register your models here.
 class ProdutoAdmin(admin.ModelAdmin):
@@ -33,3 +33,4 @@ admin.site.register(Categoria)
 admin.site.register(UnidadeMedida)
 admin.site.register(Tipo)
 admin.site.register(Condicao)
+admin.site.register(AtivoFixo)

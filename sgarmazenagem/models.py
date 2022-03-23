@@ -1,27 +1,25 @@
 from django.db import models
-from sgdominios.models import Atividade
-# from sgfamilia.models import Familia
 from sgdominios.models import Status
 
 # Create your models here.
-class Pessoa(models.Model):
+class Armazenagem(models.Model):
     criando_em = models.DateTimeField(auto_now_add=True)
     atualizado_em = models.DateTimeField(auto_now=True)
     criado_por = models.CharField(max_length=100)
     atualizado_por = models.CharField(max_length=100)
     status = models.OneToOneField(Status, blank=False, on_delete=models.PROTECT)
-    primeiro_nome = models.CharField(max_length=100)
-    nome_meio = models.CharField(max_length=100)
-    ultimo_nome = models.CharField(max_length=100)
-    data_nascimento = models.DateField
-    email = models.EmailField(max_length=100)
-    atividades = models.ManyToManyField(Atividade, blank=False)
-    tipo_pessoa = models.ForeignKey('TipoPessoa', null=False, blank=False, on_delete=models.PROTECT)
-    # familia = models.ForeignKey(Familia, null=True, blank=True)
+    nome_armazem = models.CharField(max_length=100)
+    endereco = models.CharField(max_length=100)
+    cep = models.CharField(max_length=10)
+    numero = models.IntegerField
+    tipo = models.ForeignKey('TipoArmazenagem', null=False, blank=False, on_delete=models.PROTECT)
     def __str__(self):
         return self.tipo
-    
-class TipoPessoa(models.Model):
+    class Meta:
+        verbose_name = 'Armazenagem'
+        verbose_name_plural = 'Armazenagens'
+
+class TipoArmazenagem(models.Model):
     criando_em = models.DateTimeField(auto_now_add=True)
     atualizado_em = models.DateTimeField(auto_now=True)
     criado_por = models.CharField(max_length=100)
@@ -32,5 +30,5 @@ class TipoPessoa(models.Model):
     def __str__(self):
         return self.tipo
     class Meta:
-        verbose_name = 'Tipo Pessoa'
-        verbose_name_plural = 'Tipo Pessoa'
+        verbose_name = 'Tipo Armazenagem'
+        verbose_name_plural = 'Tipo Armazenagens'
